@@ -25,7 +25,7 @@ public class JLapsePiStarter extends Application {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(JLapsePiStarter.class.getResource("views/LapseOverview.fxml"));
             AnchorPane rootLayout = (AnchorPane) loader.load();
-
+            
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
             arg0.setScene(scene);

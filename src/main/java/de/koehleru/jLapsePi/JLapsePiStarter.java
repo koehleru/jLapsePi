@@ -26,6 +26,10 @@ public class JLapsePiStarter extends Application {
             loader.setLocation(JLapsePiStarter.class.getResource("views/LapseOverview.fxml"));
             AnchorPane rootLayout = (AnchorPane) loader.load();
             
+            EventController controller = loader.getController();
+            controller.setMainStage(arg0);
+            controller.setDataModel(new DataModel());
+            
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
             arg0.setScene(scene);

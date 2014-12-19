@@ -12,12 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class EventController implements Initializable  {
-
-	private Stage mainStage;
-	
-	private DataModel dataModel;
-	
+public class EventController extends AbstractController implements Initializable  {
 
 	@FXML
 	private void handleStartButtonAction(ActionEvent event) {
@@ -41,12 +36,13 @@ public class EventController implements Initializable  {
             EditEventController eeController = loader.getController();
             eeController.setDataModel(getDataModel());
             eeController.setEditStage(editStage);
-            eeController.setMainStage(mainStage);
+            eeController.setMainStage(getMainStage());
+            eeController.setMotorHandler(getMotorHandler());
             
             Scene scene = new Scene(pane);
 			editStage.setScene(scene);
 			
-			mainStage.close();
+			getMainStage().close();
 			editStage.show();
 			
 		} catch (IOException e) {
@@ -62,21 +58,5 @@ public class EventController implements Initializable  {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
-	}
-
-	public Stage getMainStage() {
-		return mainStage;
-	}
-
-	public void setMainStage(Stage mainStage) {
-		this.mainStage = mainStage;
-	}
-
-	public DataModel getDataModel() {
-		return dataModel;
-	}
-
-	public void setDataModel(DataModel dataModel) {
-		this.dataModel = dataModel;
 	}
 }

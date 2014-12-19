@@ -4,35 +4,30 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.stage.Stage;
 
-public class EditEventController {
+public class EditEventController extends AbstractController {
 
-	private Stage mainStage;
 	private Stage editStage;
 	
-	private DataModel dataModel;
-
 	@FXML
 	public void handleOKButtonAction(ActionEvent event) {
 		editStage.close();
-		mainStage.show();
+		getMainStage().show();
 	}
 	
-	public Stage getMainStage() {
-		return mainStage;
+	@FXML
+	public void handleLeftButtonAction(ActionEvent event) {
+		if (getMotorHandler() != null) {
+			getMotorHandler().moveStepLeft();
+		}
 	}
 
-	public void setMainStage(Stage mainStage) {
-		this.mainStage = mainStage;
+	@FXML
+	public void handleRightButtonAction(ActionEvent event) {
+		if (getMotorHandler() != null) {
+			getMotorHandler().moveStepRight();
+		}
 	}
-
-	public DataModel getDataModel() {
-		return dataModel;
-	}
-
-	public void setDataModel(DataModel dataModel) {
-		this.dataModel = dataModel;
-	}
-
+	
 	public Stage getEditStage() {
 		return editStage;
 	}

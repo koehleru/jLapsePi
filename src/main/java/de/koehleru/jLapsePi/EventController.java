@@ -38,6 +38,7 @@ public class EventController extends AbstractController implements Initializable
             eeController.setEditStage(editStage);
             eeController.setMainStage(getMainStage());
             eeController.setMotorHandler(getMotorHandler());
+            eeController.setCameraHandler(getCameraHandler());
             
             Scene scene = new Scene(pane);
 			editStage.setScene(scene);

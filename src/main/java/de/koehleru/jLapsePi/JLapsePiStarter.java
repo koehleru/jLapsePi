@@ -2,7 +2,6 @@ package de.koehleru.jLapsePi;
 
 import java.io.IOException;
 
-import de.koehleru.jLapsePi.motor.MotorHandler;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -29,6 +28,7 @@ public class JLapsePiStarter extends Application {
             
             EventController controller = loader.getController();
             //controller.setMotorHandler(new MotorHandler());
+            //controller.setCameraHandler(new CameraHandler());
             controller.setMainStage(arg0);
             controller.setDataModel(new DataModel());
             

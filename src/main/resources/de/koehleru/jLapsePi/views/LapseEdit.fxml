@@ -15,10 +15,18 @@
       <SplitPane dividerPositions="0.7138364779874213" orientation="VERTICAL" prefHeight="220.0" prefWidth="480.0">
         <items>
           <AnchorPane maxHeight="220.0" maxWidth="480.0" minHeight="220.0" minWidth="480.0" prefHeight="220.0" prefWidth="480.0" SplitPane.resizableWithParent="false">
-              <children>
-                 <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="459.0">
-                 </VBox>
-              </children>
+               <children>
+                  <Button layoutX="300.0" layoutY="14.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="100.0" text="Interval">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="300.0" layoutY="103.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="100.0" text="Frames">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
           </AnchorPane>
           <AnchorPane minHeight="100.0" minWidth="480.0" prefHeight="100.0" prefWidth="480.0" SplitPane.resizableWithParent="false">
                <children>

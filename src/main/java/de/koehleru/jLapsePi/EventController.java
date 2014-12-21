@@ -16,7 +16,7 @@ public class EventController extends AbstractController implements Initializable
 
 	@FXML
 	private void handleStartButtonAction(ActionEvent event) {
-		
+		getCameraHandler().capture(1,1);
 	}
 	
 	@FXML

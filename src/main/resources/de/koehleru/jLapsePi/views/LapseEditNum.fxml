@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.embed.swing.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="320.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.koehleru.jLapsePi.EditEventController">
+   <children>
+      <SplitPane dividerPositions="0.7138364779874213" orientation="VERTICAL" prefHeight="220.0" prefWidth="480.0">
+        <items>
+          <AnchorPane maxHeight="220.0" maxWidth="480.0" minHeight="220.0" minWidth="480.0" prefHeight="220.0" prefWidth="480.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <Button layoutX="210.0" layoutY="20.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="280.0" layoutY="20.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="350.0" layoutY="20.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="210.0" layoutY="80.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="4">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="280.0" layoutY="80.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="5">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="350.0" layoutY="80.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="6">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>     
+                  <Button layoutX="210.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="7">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="280.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="8">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="350.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="9">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="420.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="420.0" layoutY="80.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="&lt;-">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>                               
+               </children>
+          </AnchorPane>
+          <AnchorPane minHeight="100.0" minWidth="480.0" prefHeight="100.0" prefWidth="480.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <Button layoutX="360.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleOKButtonAction" prefHeight="75.0" prefWidth="105.0" text="OK">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

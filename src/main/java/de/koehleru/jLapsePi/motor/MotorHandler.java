@@ -14,30 +14,33 @@ public class MotorHandler {
 	private byte[] single_step_sequence = new byte[4];
 	
 	public MotorHandler() {
-		GpioPinDigitalOutput[] pins = {gpioController.provisionDigitalOutputPin(RaspiPin.GPIO_24, PinState.LOW),
-									   gpioController.provisionDigitalOutputPin(RaspiPin.GPIO_25, PinState.LOW),
+		GpioPinDigitalOutput[] pins = {gpioController.provisionDigitalOutputPin(RaspiPin.GPIO_28, PinState.LOW),
 									   gpioController.provisionDigitalOutputPin(RaspiPin.GPIO_27, PinState.LOW),
-									   gpioController.provisionDigitalOutputPin(RaspiPin.GPIO_28, PinState.LOW)};
+									   gpioController.provisionDigitalOutputPin(RaspiPin.GPIO_25, PinState.LOW),
+									   gpioController.provisionDigitalOutputPin(RaspiPin.GPIO_24, PinState.LOW)};
 		
 		gpioController.setShutdownOptions(true, PinState.LOW, pins);
 		motor = new GpioStepperMotorComponent(pins);
 		
-		single_step_sequence[0] = (byte) 0b0001;  
-		single_step_sequence[1] = (byte) 0b0010;
-		single_step_sequence[2] = (byte) 0b0100;
-		single_step_sequence[3] = (byte) 0b1000;
+		single_step_sequence[0] = (byte) 0b1000;  
+		single_step_sequence[1] = (byte) 0b0100;
+		single_step_sequence[2] = (byte) 0b0010;
+		single_step_sequence[3] = (byte) 0b0001;
 
 		motor.setStepInterval(2);  
         motor.setStepSequence(single_step_sequence);
+        motor.setStepsPerRevolution(200);
 	}
 	
 	
 	public void moveStepLeft() {
-		motor.step(2);
+		motor.rotate(-2);
+		//motor.step(-2);
 	}
 	
 	public void moveStepRight() {
-		motor.step(-2);
+		motor.rotate(2);
+		//motor.step(2);
 	}
 	
 }

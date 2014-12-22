@@ -14,6 +14,8 @@ public class EditNumEventController extends EditEventController {
 	
 	private Stage editNumStage;
 	
+	private EditEventController eeController;
+	
 	@FXML
 	private TextField numTextField;
 	
@@ -27,6 +29,9 @@ public class EditNumEventController extends EditEventController {
 			getDataModel().setInterval(result);
 		}		
 		getEditNumStage().close();
+		
+		eeController.getFramesLabel().setText(getDataModel().getFrames() + "");
+		eeController.getIntervalLabel().setText(getDataModel().getInterval() + "");
 		getEditStage().show();
 	}
 
@@ -107,5 +112,13 @@ public class EditNumEventController extends EditEventController {
 
 	public void setNumTextField(TextField numTextField) {
 		this.numTextField = numTextField;
+	}
+
+	public EditEventController getEeController() {
+		return eeController;
+	}
+
+	public void setEeController(EditEventController eeController) {
+		this.eeController = eeController;
 	}		
 }

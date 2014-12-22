@@ -6,12 +6,20 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class EditEventController extends AbstractController {
 
 	private Stage editStage;
+	
+	@FXML
+	private Label intervalLabel;
+	
+	@FXML
+	private Label framesLabel;
+	
 	
 	@FXML
 	public void handleOKButtonAction(ActionEvent event) {
@@ -41,6 +49,7 @@ public class EditEventController extends AbstractController {
 		    loader.setLocation(EventController.class.getResource("views/LapseEditNum.fxml"));
 		    AnchorPane pane = (AnchorPane) loader.load();
 		    EditNumEventController eneController = loader.getController();
+		    eneController.setEeController(this);
 		    
             Scene scene = new Scene(pane);
 
@@ -66,6 +75,7 @@ public class EditEventController extends AbstractController {
 		    loader.setLocation(EventController.class.getResource("views/LapseEditNum.fxml"));
 		    AnchorPane pane = (AnchorPane) loader.load();
 		    EditNumEventController eneController = loader.getController();
+		    eneController.setEeController(this);
 		    
             Scene scene = new Scene(pane);
 
@@ -89,6 +99,22 @@ public class EditEventController extends AbstractController {
 
 	public void setEditStage(Stage editStage) {
 		this.editStage = editStage;
+	}
+
+	public Label getIntervalLabel() {
+		return intervalLabel;
+	}
+
+	public void setIntervalLabel(Label intervalLabel) {
+		this.intervalLabel = intervalLabel;
+	}
+
+	public Label getFramesLabel() {
+		return framesLabel;
+	}
+
+	public void setFramesLabel(Label framesLabel) {
+		this.framesLabel = framesLabel;
 	}
 
 }

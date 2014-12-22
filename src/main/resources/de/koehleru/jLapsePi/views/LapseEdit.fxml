@@ -26,6 +26,16 @@
                         <Font size="18.0" />
                      </font>
                   </Button>
+                  <Label fx:id="intervalLabel" layoutX="56.0" layoutY="34.0" text="Label">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="framesLabel" layoutX="56.0" layoutY="123.0" text="Label">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
                </children>
           </AnchorPane>
           <AnchorPane minHeight="100.0" minWidth="480.0" prefHeight="100.0" prefWidth="480.0" SplitPane.resizableWithParent="false">

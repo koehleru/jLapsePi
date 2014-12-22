@@ -16,61 +16,66 @@
         <items>
           <AnchorPane maxHeight="220.0" maxWidth="480.0" minHeight="220.0" minWidth="480.0" prefHeight="220.0" prefWidth="480.0" SplitPane.resizableWithParent="false">
                <children>
-                  <Button layoutX="210.0" layoutY="20.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1">
+                  <Button layoutX="210.0" layoutY="20.0" mnemonicParsing="false"  onAction="#handle1ButtonAction" prefHeight="50.0" prefWidth="50.0" text="1">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="280.0" layoutY="20.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="2">
+                  <Button layoutX="280.0" layoutY="20.0" mnemonicParsing="false" onAction="#handle2ButtonAction" prefHeight="50.0" prefWidth="50.0" text="2">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="350.0" layoutY="20.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="3">
+                  <Button layoutX="350.0" layoutY="20.0" mnemonicParsing="false" onAction="#handle3ButtonAction" prefHeight="50.0" prefWidth="50.0" text="3">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="210.0" layoutY="80.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="4">
+                  <Button layoutX="210.0" layoutY="80.0" mnemonicParsing="false" onAction="#handle4ButtonAction" prefHeight="50.0" prefWidth="50.0" text="4">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="280.0" layoutY="80.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="5">
+                  <Button layoutX="280.0" layoutY="80.0" mnemonicParsing="false" onAction="#handle5ButtonAction" prefHeight="50.0" prefWidth="50.0" text="5">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="350.0" layoutY="80.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="6">
+                  <Button layoutX="350.0" layoutY="80.0" mnemonicParsing="false" onAction="#handle6ButtonAction" prefHeight="50.0" prefWidth="50.0" text="6">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>     
-                  <Button layoutX="210.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="7">
+                  <Button layoutX="210.0" layoutY="140.0" mnemonicParsing="false" onAction="#handle7ButtonAction" prefHeight="50.0" prefWidth="50.0" text="7">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="280.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="8">
+                  <Button layoutX="280.0" layoutY="140.0" mnemonicParsing="false" onAction="#handle8ButtonAction" prefHeight="50.0" prefWidth="50.0" text="8">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="350.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="9">
+                  <Button layoutX="350.0" layoutY="140.0" mnemonicParsing="false" onAction="#handle9ButtonAction" prefHeight="50.0" prefWidth="50.0" text="9">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="420.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="0">
+                  <Button layoutX="420.0" layoutY="140.0" mnemonicParsing="false" onAction="#handle0ButtonAction" prefHeight="50.0" prefWidth="50.0" text="0">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="420.0" layoutY="80.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="&lt;-">
+                  <Button layoutX="420.0" layoutY="80.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="50.0" prefWidth="50.0" text="&lt;-">
                      <font>
                         <Font size="18.0" />
                      </font>
-                  </Button>                               
+                  </Button>
+                  <TextField fx:id="numTextField" layoutX="14.0" layoutY="20.0" prefHeight="39.0" prefWidth="179.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>                               
                </children>
           </AnchorPane>
           <AnchorPane minHeight="100.0" minWidth="480.0" prefHeight="100.0" prefWidth="480.0" SplitPane.resizableWithParent="false">

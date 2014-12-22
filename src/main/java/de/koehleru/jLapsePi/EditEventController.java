@@ -48,6 +48,8 @@ public class EditEventController extends AbstractController {
             eneController.setEditNumStage(editNumStage);
             eneController.setEditStage(getEditStage());
             eneController.setDataModel(getDataModel());
+            eneController.setMode(EditNumEventController.FRAMES);
+            eneController.getNumTextField().setText("" + getDataModel().getFrames());
 
             getEditStage().close();
             editNumStage.show();
@@ -56,6 +58,30 @@ public class EditEventController extends AbstractController {
 		}
 	}
 	
+	@FXML
+	public void hanldeEditInterval(ActionEvent event) {
+		Stage editNumStage = new Stage();
+		try {
+		    FXMLLoader loader = new FXMLLoader();
+		    loader.setLocation(EventController.class.getResource("views/LapseEditNum.fxml"));
+		    AnchorPane pane = (AnchorPane) loader.load();
+		    EditNumEventController eneController = loader.getController();
+		    
+            Scene scene = new Scene(pane);
+
+            editNumStage.setScene(scene);
+            eneController.setEditNumStage(editNumStage);
+            eneController.setEditStage(getEditStage());
+            eneController.setDataModel(getDataModel());
+            eneController.setMode(EditNumEventController.INTERVAL);
+            eneController.getNumTextField().setText("" + getDataModel().getInterval());
+
+            getEditStage().close();
+            editNumStage.show();
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+		}
+	}
 	
 	public Stage getEditStage() {
 		return editStage;

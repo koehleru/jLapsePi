@@ -16,7 +16,7 @@
         <items>
           <AnchorPane maxHeight="220.0" maxWidth="480.0" minHeight="220.0" minWidth="480.0" prefHeight="220.0" prefWidth="480.0" SplitPane.resizableWithParent="false">
                <children>
-                  <Button layoutX="300.0" layoutY="14.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="100.0" text="Interval">
+                  <Button layoutX="300.0" layoutY="14.0" mnemonicParsing="false" onAction="#hanldeEditInterval" prefHeight="75.0" prefWidth="100.0" text="Interval">
                      <font>
                         <Font size="18.0" />
                      </font>

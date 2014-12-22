@@ -29,7 +29,7 @@ public class JLapsePiStarter extends Application {
             AnchorPane rootLayout = (AnchorPane) loader.load();
             
             EventController controller = loader.getController();
-            controller.setMotorHandler(new MotorHandler());
+            //controller.setMotorHandler(new MotorHandler());
             controller.setCameraHandler(new CameraHandler());
             controller.setMainStage(arg0);
             controller.setDataModel(new DataModel());

@@ -21,7 +21,7 @@
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="300.0" layoutY="103.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="100.0" text="Frames">
+                  <Button layoutX="300.0" layoutY="103.0" mnemonicParsing="false" onAction="#hanldeEditFrames" prefHeight="75.0" prefWidth="100.0" text="Frames">
                      <font>
                         <Font size="18.0" />
                      </font>

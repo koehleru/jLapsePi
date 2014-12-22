@@ -2,8 +2,8 @@ package de.koehleru.jLapsePi;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 public class EditNumEventController extends EditEventController {
 
@@ -12,7 +12,7 @@ public class EditNumEventController extends EditEventController {
 	
 	private Integer mode;
 	
-	private Stage editNumStage;
+	private Scene editNumScene;
 	
 	private EditEventController eeController;
 	
@@ -28,19 +28,18 @@ public class EditNumEventController extends EditEventController {
 		if (mode.equals(INTERVAL)) {
 			getDataModel().setInterval(result);
 		}		
-		getEditNumStage().close();
 		
 		eeController.getFramesLabel().setText(getDataModel().getFrames() + "");
 		eeController.getIntervalLabel().setText(getDataModel().getInterval() + "");
-		getEditStage().show();
+		getMainStage().setScene(getEditScene());
 	}
 
-	public Stage getEditNumStage() {
-		return editNumStage;
+	public Scene getEditNumScene() {
+		return editNumScene;
 	}
 
-	public void setEditNumStage(Stage editNumStage) {
-		this.editNumStage = editNumStage;
+	public void setEditNumScene(Scene editNumScene) {
+		this.editNumScene = editNumScene;
 	}
 
 	@FXML

@@ -8,11 +8,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
 public class EditEventController extends AbstractController {
 
-	private Stage editStage;
+	private Scene editScene;
 	
 	@FXML
 	private Label intervalLabel;
@@ -23,8 +22,7 @@ public class EditEventController extends AbstractController {
 	
 	@FXML
 	public void handleOKButtonAction(ActionEvent event) {
-		editStage.close();
-		getMainStage().show();
+		getMainStage().setScene(getMainScene());
 	}
 	
 	@FXML
@@ -43,7 +41,6 @@ public class EditEventController extends AbstractController {
 	
 	@FXML
 	public void hanldeEditFrames(ActionEvent event) {
-		Stage editNumStage = new Stage();
 		try {
 		    FXMLLoader loader = new FXMLLoader();
 		    loader.setLocation(EventController.class.getResource("views/LapseEditNum.fxml"));
@@ -51,17 +48,16 @@ public class EditEventController extends AbstractController {
 		    EditNumEventController eneController = loader.getController();
 		    eneController.setEeController(this);
 		    
-            Scene scene = new Scene(pane);
+            Scene editNumScene = new Scene(pane);
 
-            editNumStage.setScene(scene);
-            eneController.setEditNumStage(editNumStage);
-            eneController.setEditStage(getEditStage());
+            eneController.setEditNumScene(editNumScene);
+            eneController.setEditScene(getMainStage().getScene());
+            eneController.setMainStage(getMainStage());
             eneController.setDataModel(getDataModel());
             eneController.setMode(EditNumEventController.FRAMES);
             eneController.getNumTextField().setText("" + getDataModel().getFrames());
-
-            getEditStage().close();
-            editNumStage.show();
+            
+            getMainStage().setScene(editNumScene);
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		}
@@ -69,7 +65,6 @@ public class EditEventController extends AbstractController {
 	
 	@FXML
 	public void hanldeEditInterval(ActionEvent event) {
-		Stage editNumStage = new Stage();
 		try {
 		    FXMLLoader loader = new FXMLLoader();
 		    loader.setLocation(EventController.class.getResource("views/LapseEditNum.fxml"));
@@ -77,28 +72,27 @@ public class EditEventController extends AbstractController {
 		    EditNumEventController eneController = loader.getController();
 		    eneController.setEeController(this);
 		    
-            Scene scene = new Scene(pane);
+            Scene editNumScene = new Scene(pane);
 
-            editNumStage.setScene(scene);
-            eneController.setEditNumStage(editNumStage);
-            eneController.setEditStage(getEditStage());
+            eneController.setEditNumScene(editNumScene);
+            eneController.setEditScene(getMainStage().getScene());
+            eneController.setMainStage(getMainStage());
             eneController.setDataModel(getDataModel());
             eneController.setMode(EditNumEventController.INTERVAL);
             eneController.getNumTextField().setText("" + getDataModel().getInterval());
 
-            getEditStage().close();
-            editNumStage.show();
+            getMainStage().setScene(editNumScene);
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		}
 	}
 	
-	public Stage getEditStage() {
-		return editStage;
+	public Scene getEditScene() {
+		return editScene;
 	}
 
-	public void setEditStage(Stage editStage) {
-		this.editStage = editStage;
+	public void setEditScene(Scene editScene) {
+		this.editScene = editScene;
 	}
 
 	public Label getIntervalLabel() {

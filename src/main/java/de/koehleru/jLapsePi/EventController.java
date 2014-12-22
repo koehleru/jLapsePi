@@ -10,7 +10,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
 public class EventController extends AbstractController implements Initializable  {
 
@@ -26,27 +25,25 @@ public class EventController extends AbstractController implements Initializable
 	
 	@FXML
 	private void handleEditButtonAction(ActionEvent event) {
-		Stage editStage = new Stage();
 		try {
 			
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(EventController.class.getResource("views/LapseEdit.fxml"));
             AnchorPane pane = (AnchorPane) loader.load();
-            
+
+            Scene scene = new Scene(pane);
+
             EditEventController eeController = loader.getController();
             eeController.setDataModel(getDataModel());
-            eeController.setEditStage(editStage);
+            eeController.setEditScene(scene);
             eeController.setMainStage(getMainStage());
             eeController.setMotorHandler(getMotorHandler());
             eeController.setCameraHandler(getCameraHandler());
             eeController.getFramesLabel().setText(getDataModel().getFrames() + "");
             eeController.getIntervalLabel().setText(getDataModel().getInterval() + "");
             
-            Scene scene = new Scene(pane);
-			editStage.setScene(scene);
-			
-			getMainStage().close();
-			editStage.show();
+            eeController.setMainScene(getMainStage().getScene());
+			getMainStage().setScene(scene);
 			
 		} catch (IOException e) {
 			e.printStackTrace();

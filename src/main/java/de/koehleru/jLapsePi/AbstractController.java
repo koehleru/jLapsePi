@@ -1,12 +1,15 @@
 package de.koehleru.jLapsePi;
 
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import de.koehleru.jLapsePi.camera.CameraHandler;
 import de.koehleru.jLapsePi.motor.MotorHandler;
-import javafx.stage.Stage;
 
 public class AbstractController {
 
 	private Stage mainStage;
+	
+	private Scene mainScene;
 	
 	private DataModel dataModel;
 
@@ -14,12 +17,12 @@ public class AbstractController {
 	
 	private CameraHandler cameraHandler;
 
-	public Stage getMainStage() {
-		return mainStage;
+	public Scene getMainScene() {
+		return mainScene;
 	}
 
-	public void setMainStage(Stage mainStage) {
-		this.mainStage = mainStage;
+	public void setMainScene(Scene mainScene) {
+		this.mainScene = mainScene;
 	}
 
 	public DataModel getDataModel() {
@@ -44,6 +47,14 @@ public class AbstractController {
 
 	public void setCameraHandler(CameraHandler cameraHandler) {
 		this.cameraHandler = cameraHandler;
+	}
+
+	public Stage getMainStage() {
+		return mainStage;
+	}
+
+	public void setMainStage(Stage mainStage) {
+		this.mainStage = mainStage;
 	}
 	
 }

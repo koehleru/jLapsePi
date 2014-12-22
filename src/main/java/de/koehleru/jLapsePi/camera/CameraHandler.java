@@ -21,11 +21,8 @@ public class CameraHandler {
 			Runtime.getRuntime().exec("sudo sh -c \"echo 'in' > /sys/class/gpio/gpio252/direction\"").waitFor();
 			Runtime.getRuntime().exec("/usr/local/bin/gphoto2 --auto-detect").waitFor();
 		} catch (IOException | InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//gphotoCamera = new Camera();
-		//gphotoCamera.initialize();
 	}
 	
 	public void capture(Integer nr, Integer all) {
@@ -37,17 +34,8 @@ public class CameraHandler {
 		try {
 			Runtime.getRuntime().exec("/usr/local/bin/gphoto2 --capture-image-and-download " + filename).waitFor();
 		} catch (IOException | InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-
-		//if (!gphotoCamera.isInitialized()) {
-		//	gphotoCamera.initialize();
-		//}
-		//CameraFile file = gphotoCamera.captureImage();
-		//file.save("/mnt/usb-stick/xxx.jpg");
-		
 		switchBacklightOn();
 	}
 	

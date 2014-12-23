@@ -4,6 +4,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import de.koehleru.jLapsePi.camera.CameraHandler;
 import de.koehleru.jLapsePi.motor.MotorHandler;
+import de.koehleru.jLapsePi.timelapse.TimeLapseController;
 
 public class AbstractController {
 
@@ -16,6 +17,8 @@ public class AbstractController {
 	private MotorHandler motorHandler;
 	
 	private CameraHandler cameraHandler;
+	
+	private TimeLapseController timeLapseController;
 
 	public Scene getMainScene() {
 		return mainScene;
@@ -55,6 +58,14 @@ public class AbstractController {
 
 	public void setMainStage(Stage mainStage) {
 		this.mainStage = mainStage;
+	}
+
+	public TimeLapseController getTimeLapseController() {
+		return timeLapseController;
+	}
+
+	public void setTimeLapseController(TimeLapseController timeLapseController) {
+		this.timeLapseController = timeLapseController;
 	}
 	
 }

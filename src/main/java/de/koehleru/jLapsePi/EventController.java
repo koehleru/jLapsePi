@@ -15,12 +15,15 @@ public class EventController extends AbstractController implements Initializable
 
 	@FXML
 	private void handleStartButtonAction(ActionEvent event) {
-		getCameraHandler().capture(1,1);
+		//getCameraHandler().capture(1,1);
+		Runnable runnable = getTimeLapseController();
+		Thread worker = new Thread(runnable);
+		worker.start();
 	}
 	
 	@FXML
 	private void handleStopButtonAction(ActionEvent event) {
-		
+		getTimeLapseController().stop();
 	}
 	
 	@FXML

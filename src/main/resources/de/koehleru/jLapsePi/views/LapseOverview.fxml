@@ -42,6 +42,30 @@
                              <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
                           </VBox.margin>
                        </Label>
+                        <Label fx:id="intervalLabel" text="0">
+                           <VBox.margin>
+                              <Insets left="200.0" top="-120.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="framesLabel" text="0">
+                           <VBox.margin>
+                              <Insets left="200.0" top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="remainLabel" text="0">
+                           <VBox.margin>
+                              <Insets left="200.0" top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
                     </children>
                  </VBox>
               </children>

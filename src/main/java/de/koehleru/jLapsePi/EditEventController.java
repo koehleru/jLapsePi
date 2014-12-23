@@ -13,6 +13,8 @@ public class EditEventController extends AbstractController {
 
 	private Scene editScene;
 	
+	private EventController eventController;
+	
 	@FXML
 	private Label intervalLabel;
 	
@@ -23,6 +25,10 @@ public class EditEventController extends AbstractController {
 	@FXML
 	public void handleOKButtonAction(ActionEvent event) {
 		getMainStage().setScene(getMainScene());
+		getEventController().getIntervalLabel().setText("" + getDataModel().getInterval());
+		getEventController().getFramesLabel().setText("" + getDataModel().getFrames());
+		Integer remainingTime = getDataModel().getFrames() * getDataModel().getInterval();
+		getEventController().getRemainLabel().setText(remainingTime/1000 + "s");
 	}
 	
 	@FXML
@@ -109,6 +115,14 @@ public class EditEventController extends AbstractController {
 
 	public void setFramesLabel(Label framesLabel) {
 		this.framesLabel = framesLabel;
+	}
+
+	public EventController getEventController() {
+		return eventController;
+	}
+
+	public void setEventController(EventController eventController) {
+		this.eventController = eventController;
 	}
 
 }

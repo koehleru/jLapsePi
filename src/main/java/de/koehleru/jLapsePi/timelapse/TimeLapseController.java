@@ -33,7 +33,6 @@ public class TimeLapseController implements Runnable {
 				try {
 					Thread.sleep(model.getInterval() - diffTime);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}

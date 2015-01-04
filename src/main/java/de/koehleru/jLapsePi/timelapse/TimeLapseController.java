@@ -1,5 +1,6 @@
 package de.koehleru.jLapsePi.timelapse;
 
+import javafx.application.Platform;
 import de.koehleru.jLapsePi.DataModel;
 import de.koehleru.jLapsePi.EventController;
 import de.koehleru.jLapsePi.camera.CameraHandler;
@@ -39,12 +40,20 @@ public class TimeLapseController implements Runnable {
 					e.printStackTrace();
 				}
 			}
-			
-			Integer remainingTime = model.getFrames() * model.getInterval();
-			eventController.getRemainLabel().setText(remainingTime/1000 + "s");
+			updateUI(i + 1, model, eventController);
 		}
 	}
 
+	private void updateUI(int i, DataModel model, EventController eController) {
+		Platform.runLater(new Runnable() {
+			@Override
+			public void run() {
+				Integer remainingTime = (model.getFrames() - i) * model.getInterval();
+				eventController.getRemainLabel().setText(remainingTime/1000 + "s");
+			}
+		});
+	}
+	
 	public void stop() {
 		stop = true;
 	}

@@ -34,10 +34,10 @@ public class JLapsePiStarter extends Application {
             MotorHandler mHandler = new MotorHandler();
             CameraHandler cHandler = new CameraHandler();
             DataModel model = new DataModel();
-            controller.setMotorHandler(new MotorHandler());
-            controller.setCameraHandler(new CameraHandler());
+            controller.setMotorHandler(mHandler);
+            controller.setCameraHandler(cHandler);
             
-            TimeLapseController tController = new TimeLapseController(model, cHandler, mHandler);
+            TimeLapseController tController = new TimeLapseController(model, cHandler, mHandler, controller);
             controller.setTimeLapseController(tController);
             
             controller.setMainStage(arg0);

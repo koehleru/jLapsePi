@@ -29,9 +29,13 @@ public class MotorHandler {
 
 		motor.setStepInterval(2);  
         motor.setStepSequence(single_step_sequence);
+        
         motor.setStepsPerRevolution(200);
 	}
 	
+	public void setStepsPerMove(int steps) {
+		motor.setStepsPerRevolution(steps);	
+	}
 	
 	public void moveStepLeft() {
 		motor.rotate(-2);
@@ -41,6 +45,5 @@ public class MotorHandler {
 	public void moveStepRight() {
 		motor.rotate(2);
 		//motor.step(2);
-	}
-	
+	}	
 }

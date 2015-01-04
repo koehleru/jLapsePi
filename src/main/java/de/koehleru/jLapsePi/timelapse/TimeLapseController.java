@@ -1,6 +1,7 @@
 package de.koehleru.jLapsePi.timelapse;
 
 import de.koehleru.jLapsePi.DataModel;
+import de.koehleru.jLapsePi.EventController;
 import de.koehleru.jLapsePi.camera.CameraHandler;
 import de.koehleru.jLapsePi.motor.MotorHandler;
 
@@ -10,11 +11,13 @@ public class TimeLapseController implements Runnable {
 	private boolean stop = false;
 	private CameraHandler cameraHandler;
 	private MotorHandler motorHandler;
+	private EventController eventController;
 	
-	public TimeLapseController(DataModel model, CameraHandler cHandler, MotorHandler mHandler) {
+	public TimeLapseController(DataModel model, CameraHandler cHandler, MotorHandler mHandler, EventController eController) {
 		this.model = model;
 		cameraHandler = cHandler;
 		motorHandler = mHandler;
+		eventController = eController;
 	}
 	
 	@Override
@@ -36,10 +39,17 @@ public class TimeLapseController implements Runnable {
 					e.printStackTrace();
 				}
 			}
+			
+			Integer remainingTime = model.getFrames() * model.getInterval();
+			eventController.getRemainLabel().setText(remainingTime/1000 + "s");
 		}
 	}
 
 	public void stop() {
 		stop = true;
+	}
+	
+	public void reset() {
+		stop = false;
 	}
 }

@@ -10,6 +10,7 @@ public class CameraHandler {
 	public CameraHandler() {
 
 		try {
+			Runtime.getRuntime().exec("sudo sh -c \"echo 252 > /sys/class/gpio/export\"").waitFor();
 			Runtime.getRuntime().exec("sudo sh -c \"echo 'out' > /sys/class/gpio/gpio252/direction\"").waitFor();
 			Runtime.getRuntime().exec("/usr/local/bin/gphoto2 --auto-detect").waitFor();
 		} catch (IOException | InterruptedException e) {

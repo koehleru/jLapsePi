@@ -10,6 +10,6 @@ public class ImageHandlerTest {
 	@Test
 	public void testgetOverallBrightness() {
 		Double result = handler.getOverallBrightness("C:\\private\\develop\\workspace\\jLapsePi\\src\\test\\resources\\test.jpg");
-		Assert.assertEquals(Double.valueOf(0.218299), result);
+		Assert.assertEquals(Double.valueOf(0.506526), result);
 	}
 }

@@ -22,12 +22,12 @@ public class MotorHandler {
 		gpioController.setShutdownOptions(true, PinState.LOW, pins);
 		motor = new GpioStepperMotorComponent(pins);
 		
-		single_step_sequence[0] = (byte) 0b1000;  
-		single_step_sequence[1] = (byte) 0b0100;
-		single_step_sequence[2] = (byte) 0b0010;
-		single_step_sequence[3] = (byte) 0b0001;
+		single_step_sequence[0] = (byte) 0b0001;  
+		single_step_sequence[1] = (byte) 0b0010;
+		single_step_sequence[2] = (byte) 0b0100;
+		single_step_sequence[3] = (byte) 0b1000;
 
-		motor.setStepInterval(2);  
+		motor.setStepInterval(5);  
         motor.setStepSequence(single_step_sequence);
         
         motor.setStepsPerRevolution(200);
@@ -38,12 +38,10 @@ public class MotorHandler {
 	}
 	
 	public void moveStepLeft() {
-		motor.rotate(-2);
-		//motor.step(-2);
+		motor.step(-2);
 	}
 	
 	public void moveStepRight() {
-		motor.rotate(2);
-		//motor.step(2);
+		motor.step(2);
 	}	
 }

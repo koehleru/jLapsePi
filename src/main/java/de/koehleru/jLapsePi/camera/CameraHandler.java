@@ -20,6 +20,7 @@ public class CameraHandler {
 	private ImageHandler imageHandler;
 	private List<CameraConfig> configList;
 	private int currentIndex = 7;
+	private DateFormat df = new SimpleDateFormat("dd-MM-yyyy-HH-mm-ss");
 
 	public CameraHandler() {
 		init();
@@ -39,15 +40,12 @@ public class CameraHandler {
 	public void capture(Integer nr, Integer all) {
 		switchBacklightOff();
 		
-		Date date = new Date();
-		DateFormat df = new SimpleDateFormat("dd-MM-yyyy-HH-mm-ss");
-		
 		widgets.setValue("/imgsettings/iso", configList.get(currentIndex).iso.toString());
 		widgets.setValue("/capturesettings/shutterspeed", configList.get(currentIndex).shutter.toString());
 		widgets.apply();
 		
 		CameraFile file = gphotoCamera.captureImage();
-		String fileName = "/mnt/usbstick/timelapse_" + df.format(date) + "_" + nr + "of" + all + ".jpg"; 
+		String fileName = "/mnt/usbstick/timelapse_" + df.format(new Date()) + "_" + nr + "of" + all + ".jpg"; 
 		file.save(fileName);
 		
 		Double brightness = imageHandler.getOverallBrightness(fileName);
@@ -63,6 +61,15 @@ public class CameraHandler {
 		switchBacklightOn();
 	}
 	
+	public void captureAutomatic(Integer nr, Integer all) {
+		switchBacklightOff();
+		
+		CameraFile file = gphotoCamera.captureImage();
+		String fileName = "/mnt/usbstick/timelapse_" + df.format(new Date()) + "_" + nr + "of" + all + ".jpg"; 
+		file.save(fileName);
+		
+		switchBacklightOn();
+	}
 	
 	private void switchBacklightOn() {
 		try {
